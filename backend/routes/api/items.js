@@ -35,7 +35,7 @@ router.param("comment", function(req, res, next, id) {
     })
     .catch(next);
 });
-// TODO
+
 router.get("/", auth.optional, function(req, res, next) {
   var query = {};
   var limit = 100;
@@ -53,7 +53,7 @@ router.get("/", auth.optional, function(req, res, next) {
     query.tagList = { $in: [req.query.tag] };
   }
   
-  if (typeof req.query.title !== "undefined") {
+  if (typeof req.query.title !== "undefined" && req.query.title.length >= 3) {
     query.title = { $regex: req.query.title, $options: "i" };
   }
 
