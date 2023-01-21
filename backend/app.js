@@ -1,5 +1,5 @@
-require("dotenv").config();
 require('newrelic');
+require("dotenv").config();
 var http = require("http"),
   path = require("path"),
   methods = require("methods"),
