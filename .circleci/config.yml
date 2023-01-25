@@ -10,9 +10,10 @@ jobs:
       - run:
           name: Install deps
           command: yarn install
+      - run: ls -la ~/market/frontend
       - run:
           name: Run tests
-          command: yarn test --project-root ~/market/frontend/
+          command: yarn test
 
 workflows:
   build-and-test:
