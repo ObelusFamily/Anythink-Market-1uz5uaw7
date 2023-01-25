@@ -1,10 +1,16 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5.1.0
+
 jobs:
   build-and-test:
-    executor: yarn
+    docker:
+      - image: cimg/node:16.18
+    working_directory: ~/market/frontend
     steps:
-      - checkout
+      - checkout:
+          path: ~/market
       - run:
           name: Install deps
           command: yarn install
