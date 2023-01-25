@@ -1,5 +1,6 @@
 import "./custom.scss";
 import theme from './styles/theme';
+import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -14,11 +15,13 @@ import App from "./components/App";
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <ConnectedRouter history={history}>
-        <Switch>
-          <Route path="/" component={App} />
-        </Switch>
-      </ConnectedRouter>
+      <GlobalStyle>
+        <ConnectedRouter history={history}>
+          <Switch>
+            <Route path="/" component={App} />
+          </Switch>
+        </ConnectedRouter>
+      </GlobalStyle>
     </ThemeProvider>
   </Provider>,
 
