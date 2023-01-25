@@ -8,7 +8,9 @@ jobs:
     executor: ci/executor
     steps:
       - checkout
-      - ci/install-deps
+      - run:
+          name: Install deps
+          command: yarn install
       - ci/run-tests
       - run:
           name: Lint code
