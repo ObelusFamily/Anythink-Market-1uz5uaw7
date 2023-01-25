@@ -7,7 +7,7 @@ jobs:
   build-and-test:
     executor: ci/executor
     steps:
-      - ci/checkout
+      - checkout
       - ci/install-deps
       - ci/run-tests
       - run:
