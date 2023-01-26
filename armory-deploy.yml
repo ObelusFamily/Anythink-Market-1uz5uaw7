@@ -25,10 +25,10 @@ strategies:
     bluegreen:
       redirectTrafficAfter:
         - pause:
-            untilApproved: true
+            untilApproved: false
       shutDownOldVersionAfter:
         - pause:
-            untilApproved: true
+            untilApproved: false
   rolling:
     canary:
       steps:
