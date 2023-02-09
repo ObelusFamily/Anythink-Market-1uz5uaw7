@@ -2,6 +2,6 @@
 
 file=$1
 
-tar -czvf "/backup.tar.gz" "$file"
+tar -czvf "/backend/backup.tar.gz" "$file"
 
 echo "Archiving done"
